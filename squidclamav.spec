@@ -25,7 +25,7 @@ in C and can handle thousand of connections.
 %setup -q
 
 %build
-%configure --prefix=/usr --with-c-icap=%{_libdir}/c_icap
+%configure --prefix=/usr --with-c-icap=%{_libdir}/c_icap --libexecdir=/var/www/cgi-bin
 %{__make}
 
 %install
@@ -53,13 +53,12 @@ find %{buildroot}
 %attr(0644,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}.conf
 %attr(0644,root,root) %{_mandir}/man1/%{name}.1.gz
 %attr(0644,root,root) %{_datadir}/%{name}/README
-%attr(0755,root,root) %{_libexecdir}/%{name}/clwarn.cgi
-%attr(0755,root,root) %{_libexecdir}/%{name}/clwarn.cgi.de_DE
-%attr(0755,root,root) %{_libexecdir}/%{name}/clwarn.cgi.en_EN
-%attr(0755,root,root) %{_libexecdir}/%{name}/clwarn.cgi.fr_FR
-%attr(0755,root,root) %{_libexecdir}/%{name}/clwarn.cgi.pt_BR
-%attr(0755,root,root) %{_libexecdir}/%{name}/clwarn.cgi.ru_RU
-%dir %{_libexecdir}/%{name}
+%attr(0755,root,root) /var/www/cgi-bin/%{name}/clwarn.cgi
+%attr(0755,root,root) /var/www/cgi-bin/%{name}/clwarn.cgi.de_DE
+%attr(0755,root,root) /var/www/cgi-bin/%{name}/clwarn.cgi.en_EN
+%attr(0755,root,root) /var/www/cgi-bin/%{name}/clwarn.cgi.fr_FR
+%attr(0755,root,root) /var/www/cgi-bin/%{name}/clwarn.cgi.pt_BR
+%attr(0755,root,root) /var/www/cgi-bin/%{name}/clwarn.cgi.ru_RU
 %{_libdir}/c_icap/squidclamav.so
 
 %changelog
