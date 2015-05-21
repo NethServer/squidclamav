@@ -4,8 +4,6 @@ Name: squidclamav
 Version: 6.10
 Release: 1%{?dist}
 Summary: A Clamav Antivirus Redirector for Squid
-
-Group: Networking/Utilities
 License: GPLv3+
 URL: http://squidclamav.darold.net/
 Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
