@@ -1,7 +1,7 @@
 %define _unpackaged_files_terminate_build 0
 
 Name: squidclamav
-Version: 6.10
+Version: 6.15
 Release: 1%{?dist}
 Summary: A Clamav Antivirus Redirector for Squid
 License: GPLv3+
@@ -48,7 +48,7 @@ find %{buildroot}
 %files
 %defattr(0644,root,root,0755)
 %doc README
-%attr(0644,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}.conf
+%attr(0644,root,root) %config(noreplace) %{_sysconfdir}/c-icap/%{name}.conf
 %attr(0644,root,root) %{_mandir}/man1/%{name}.1.gz
 %attr(0644,root,root) %{_datadir}/%{name}/README
 %attr(0755,root,root) /var/www/cgi-bin/%{name}/clwarn.cgi
@@ -60,6 +60,9 @@ find %{buildroot}
 %{_libdir}/c_icap/squidclamav.so
 
 %changelog
+* Wed Jan 20 2016 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.15-1
+- update to 6.15
+
 * Thu May 30 2013 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.10-1
 - enable c-icap support
 - update to 6.10
