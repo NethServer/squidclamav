@@ -1,12 +1,12 @@
 %define _unpackaged_files_terminate_build 0
 
 Name: squidclamav
-Version: 6.15
+Version: 6.16
 Release: 1%{?dist}
 Summary: A Clamav Antivirus Redirector for Squid
 License: GPLv3+
 URL: http://squidclamav.darold.net/
-Source0: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0: https://github.com/darold/squidclamav/archive/v%{version}.tar.gz
 BuildRequires:	clamav-devel >= 0.82
 BuildRequires:	curl-devel >= 7.12.1
 BuildRequires:  c-icap-devel
@@ -60,6 +60,9 @@ find %{buildroot}
 %{_libdir}/c_icap/squidclamav.so
 
 %changelog
+* Tue Sep 26 2017 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.16-1
+- update to 6.16
+
 * Wed Jan 20 2016 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.15-1
 - update to 6.15
 
