@@ -2,7 +2,7 @@
 
 Name: squidclamav
 Version: 6.16
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A Clamav Antivirus Redirector for Squid
 License: GPLv3+
 URL: http://squidclamav.darold.net/
@@ -11,6 +11,7 @@ BuildRequires:	clamav-devel >= 0.82
 BuildRequires:	curl-devel >= 7.12.1
 BuildRequires:  c-icap-devel
 Requires:	squid, c-icap
+Epoch: 1
 
 %description
 %{name} Antivirus redirector for Squid proxy based on the Awards winnings
@@ -60,6 +61,9 @@ find %{buildroot}
 %{_libdir}/c_icap/squidclamav.so
 
 %changelog
+* Mon Nov 20 2023 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 7.4-1
+- Can't install squidclamav - NethServer/dev#6774 - Bug
+
 * Tue Aug 22 2023 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.16-2
 - rebuild using c-icap from epel - NethServer/dev#6762 - Bug
 
